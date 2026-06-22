@@ -7,9 +7,13 @@
     --ink: #17212b;
     --muted: #5a6875;
     --rule: #d9e0e7;
+    --rule-strong: #c5d0db;
     --blue: #00407a;
+    --blue-soft: #eaf2f8;
     --cyan: #00a5c8;
+    --cyan-soft: #e8f7fa;
     --gold: #f2a900;
+    --gold-soft: #fff5d8;
     --paper: #fbfcfd;
     --code-bg: #f3f6f8;
 }
@@ -21,6 +25,7 @@ body {
 .reveal {
     color: var(--ink);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 34px;
 }
 
 .reveal .slides {
@@ -29,7 +34,7 @@ body {
 
 .reveal .slides section {
     box-sizing: border-box;
-    padding-bottom: 34px;
+    padding: 28px 42px 52px;
 }
 
 .reveal h1,
@@ -43,34 +48,37 @@ body {
 }
 
 .reveal h1 {
-    max-width: 940px;
-    font-size: 2.18em;
-    line-height: 1.02;
+    max-width: 980px;
+    margin-bottom: 0.32em;
+    font-size: 2.35em;
+    line-height: 0.98;
 }
 
 .reveal h2 {
-    margin-bottom: 0.6em;
-    border-bottom: 4px solid var(--gold);
-    padding-bottom: 0.16em;
-    font-size: 1.3em;
+    margin-bottom: 0.72em;
+    border-bottom: 5px solid var(--gold);
+    padding-bottom: 0.18em;
+    font-size: 1.48em;
+    line-height: 1.08;
 }
 
 .reveal h3 {
-    margin-bottom: 0.3em;
-    font-size: 0.8em;
+    margin-bottom: 0.36em;
+    font-size: 0.88em;
+    line-height: 1.14;
 }
 
 .reveal h4 {
     color: var(--blue);
     margin-bottom: 0.3em;
-    font-size: 0.66em;
+    font-size: 0.74em;
     font-weight: 700;
 }
 
 .reveal p,
 .reveal li {
-    font-size: 0.6em;
-    line-height: 1.32;
+    font-size: 0.68em;
+    line-height: 1.38;
 }
 
 .reveal ul,
@@ -79,7 +87,7 @@ body {
 }
 
 .reveal li {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.38em;
 }
 
 .reveal strong {
@@ -107,16 +115,16 @@ body {
 .eyebrow,
 .source-line {
     color: var(--cyan);
-    font-size: 0.5em !important;
+    font-size: 0.58em !important;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
 .byline {
     margin-top: 1.1em;
     color: var(--blue);
-    font-size: 0.72em !important;
+    font-size: 0.78em !important;
     font-weight: 700;
 }
 
@@ -130,9 +138,10 @@ body {
 }
 
 .takeaway {
-    margin-top: 0.7em;
-    border-left: 6px solid var(--gold);
-    padding: 0.4em 0 0.4em 0.75em;
+    margin-top: 0.85em;
+    border-left: 7px solid var(--gold);
+    background: linear-gradient(90deg, var(--gold-soft), rgba(255, 245, 216, 0));
+    padding: 0.48em 0 0.48em 0.78em;
     color: var(--ink);
     font-weight: 700;
 }
@@ -142,12 +151,12 @@ body {
 .two-col,
 .three-col {
     display: grid;
-    gap: 30px;
+    gap: 34px;
     align-items: start;
 }
 
 .two-col {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .three-col {
@@ -155,11 +164,30 @@ body {
     align-items: stretch;
 }
 
+.engine-list {
+    display: grid;
+    gap: 9px;
+    grid-template-columns: 1fr;
+}
+
 .three-col > div,
+.engine-list > div,
 .card {
-    border-top: 4px solid var(--cyan);
-    background: #eef7fa;
-    padding: 16px 18px;
+    border-top: 5px solid var(--cyan);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--cyan-soft);
+    padding: 18px 20px;
+    min-height: 92px;
+    box-shadow: 0 8px 20px rgba(23, 33, 43, 0.05);
+    font-size: 0.94em;
+}
+
+.engine-list > div {
+    min-height: 0;
+    padding: 11px 15px;
 }
 
 .card.gold {
@@ -168,7 +196,8 @@ body {
 
 .metric {
     border-left: 6px solid var(--cyan);
-    padding-left: 16px;
+    background: var(--blue-soft);
+    padding: 0.24em 0 0.24em 16px;
 }
 
 .metric strong {
@@ -180,17 +209,17 @@ body {
 
 .reveal pre {
     width: 100%;
-    margin: 0.5em 0;
+    margin: 0.44em 0 0;
     box-shadow: none;
-    font-size: 0.46em;
-    line-height: 1.3;
+    font-size: 0.54em;
+    line-height: 1.32;
 }
 
 .reveal pre code {
-    border: 1px solid var(--rule);
+    border: 1px solid var(--rule-strong);
     border-radius: 6px;
-    padding: 0.9em 1.1em;
-    max-height: 520px;
+    padding: 0.86em 1em;
+    max-height: 470px;
     background: #1f1f24; /* monokai-friendly dark block on the white page */
 }
 
@@ -205,18 +234,24 @@ body {
 /* tables (config/CLI reference slides) */
 
 .reveal table {
-    margin: 0.4em 0;
-    font-size: 0.58em;
+    width: 100%;
+    margin: 0.34em 0 0;
+    border-collapse: collapse;
+    font-size: 0.64em;
 }
 
 .reveal table th {
     color: var(--blue);
-    border-bottom: 2px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    background: var(--blue-soft);
+    font-weight: 700;
 }
 
 .reveal table th,
 .reveal table td {
-    padding: 0.25em 0.6em;
+    padding: 0.34em 0.62em;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.24;
 }
 
 /* a small "notebook" tag used on section openers */
@@ -224,10 +259,28 @@ body {
 .nb-tag {
     display: inline-block;
     margin-top: 0.5em;
-    border: 1px solid var(--cyan);
+    border: 2px solid var(--cyan);
     border-radius: 4px;
-    padding: 0.2em 0.55em;
+    padding: 0.24em 0.6em;
     color: var(--blue);
+    background: white;
+    font-size: 0.56em !important;
+    font-weight: 700;
+}
+
+.repo-link {
+    margin-top: 0.65em;
+    border-left: 5px solid var(--cyan);
+    background: white;
+    padding: 0.42em 0.68em;
+    font-family: "Courier New", monospace;
+    font-size: 0.58em !important;
+    overflow-wrap: anywhere;
+}
+
+.benchmark-note {
+    margin-top: 0.5em;
+    color: var(--muted);
     font-size: 0.5em !important;
     font-weight: 700;
 }
@@ -237,34 +290,41 @@ body {
 .callout {
     margin-top: 0.6em;
     border-left: 6px solid var(--gold);
-    background: #fff8e8;
-    padding: 0.4em 0.8em;
+    background: var(--gold-soft);
+    padding: 0.48em 0.82em;
     font-size: 0.92em;
+}
+
+.math-block {
+    border-left: 5px solid var(--cyan);
+    background: white;
+    padding: 0.25em 0 0.25em 0.65em;
 }
 
 /* ===== brand + chrome ===== */
 
 .deck-brand {
     position: fixed;
-    top: 18px;
-    right: 22px;
+    top: 16px;
+    right: 20px;
     z-index: 10;
 }
 
 .deck-brand img {
-    width: 154px;
+    width: 132px;
     height: auto;
     border: none;
+    background: transparent;
 }
 
 .deck-footer {
     position: fixed;
     right: 24px;
-    bottom: 22px;
+    bottom: 18px;
     z-index: 10;
     color: #6c7a86;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .reveal .slide-number {
@@ -273,7 +333,7 @@ body {
     left: 18px;
     color: var(--blue);
     background: transparent;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .reveal .progress {

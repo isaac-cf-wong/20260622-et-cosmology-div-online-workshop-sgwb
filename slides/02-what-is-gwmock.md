@@ -12,12 +12,13 @@
   </div>
   <div>
     <h3>One framework, three engines</h3>
-    <div class="three-col">
+    <div class="engine-list">
       <div><strong>gwmock-signal</strong><br/>waveforms &amp; the SGWB backend</div>
       <div><strong>gwmock-noise</strong><br/>coloured &amp; correlated noise</div>
       <div><strong>gwmock-pop</strong><br/>source populations</div>
     </div>
     <p class="muted" style="margin-top:0.8em"><code>pip install "gwmock[sgwb]"</code> · Python 3.12–3.14 · GPL-3.0 · <a href="https://leuven-gravity-institute.github.io/gwmock">docs</a></p>
+    <p class="benchmark-note">Share performance results: <a href="https://github.com/Leuven-Gravity-Institute/gwmock-benchmark">gwmock-benchmark</a></p>
   </div>
 </div>
 
@@ -28,4 +29,5 @@ Notes:
   the gwmock CLI
 - emphasise reproducibility + verification; that's the MDC value, not just "make
   some data"
+- briefly advertise gwmock-benchmark for community runtime/hardware results
 - ~1 min
