@@ -684,7 +684,8 @@ wheels = [
 
 [[package]]
 name = "gwmock"
-source = { editable = "../../software/gwmock" }
+version = "0.8.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "filelock" },
     { name = "gwmock-noise" },
@@ -697,46 +698,20 @@ dependencies = [
     { name = "tqdm" },
     { name = "typer" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/01/62/2ae3dbeb358c6d9d9fb02b4e8d4e0b4c64ff7ffbeef0ab520595c965404f/gwmock-0.8.0.tar.gz", hash = "sha256:6bc6651d2c6ae4ebba9d15b9c3a44cf9c3ed2890881643c9e994d32f220cadf4", size = 191706, upload-time = "2026-06-22T13:53:39.823Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/77/44/0b431b9063fc096f01039b183baa957d9f4026079ec3a450fb06f1ad3cbd/gwmock-0.8.0-py3-none-any.whl", hash = "sha256:60ca3baf87b9fa6da8ee48c3035f1adb0a243755d08212da402bf5a08bd61e96", size = 162970, upload-time = "2026-06-22T13:53:38.736Z" },
+]
 
 [package.optional-dependencies]
 sgwb = [
     { name = "gwmock-signal", extra = ["sgwb"] },
 ]
 
-[package.metadata]
-requires-dist = [
-    { name = "filelock", specifier = ">=3.29.4" },
-    { name = "gwmock-noise", specifier = ">=0.5.2" },
-    { name = "gwmock-pop", specifier = ">=0.10.0" },
-    { name = "gwmock-signal", specifier = ">=0.8.2" },
-    { name = "gwmock-signal", extras = ["sgwb"], marker = "extra == 'sgwb'", specifier = ">=0.8.2" },
-    { name = "h5py", specifier = ">=3.16.0" },
-    { name = "psutil", specifier = ">=7.2.2" },
-    { name = "pydantic", specifier = ">=2.13.4" },
-    { name = "pymap3d", specifier = ">=3.2.0" },
-    { name = "tqdm", specifier = ">=4.68.3" },
-    { name = "typer", specifier = ">=0.26.7" },
-]
-provides-extras = ["sgwb"]
-
-[package.metadata.requires-dev]
-build = [{ name = "hatch", specifier = ">=1.17.0" }]
-dev = [
-    { name = "prek", specifier = ">=0.4.5" },
-    { name = "pytest", specifier = ">=9.1.1" },
-    { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "pytest-github-actions-annotate-failures", specifier = ">=0.4.1" },
-    { name = "pytest-mock", specifier = ">=3.15.1" },
-]
-docs = [
-    { name = "mkdocstrings-python", specifier = ">=2.0.5" },
-    { name = "zensical", specifier = ">=0.0.45" },
-]
-release = [{ name = "git-cliff", specifier = ">=2.13.1" }]
-
 [[package]]
 name = "gwmock-noise"
-source = { editable = "../../software/gwmock-noise" }
+version = "0.5.2"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "h5py" },
     { name = "numpy" },
@@ -745,43 +720,15 @@ dependencies = [
     { name = "scipy" },
     { name = "typer" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "gengli", marker = "extra == 'gengli'", specifier = ">=0.2.0" },
-    { name = "gwosc", marker = "extra == 'gwosc'", specifier = ">=0.8.2" },
-    { name = "gwpy", marker = "extra == 'frame'" },
-    { name = "gwpy", marker = "extra == 'gwosc'" },
-    { name = "gwpy", marker = "extra == 'gwpy'" },
-    { name = "h5py", specifier = ">=3.16.0" },
-    { name = "lalsuite", marker = "extra == 'frame'" },
-    { name = "numpy", specifier = ">=2.4.6" },
-    { name = "pydantic", specifier = ">=2.13.4" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "scipy", specifier = ">=1.17.1" },
-    { name = "typer", specifier = ">=0.26.7" },
+sdist = { url = "https://files.pythonhosted.org/packages/84/d2/45e00f0d48345a75d70b5d55ad067d86ef75cceae86e59df166c1f88254c/gwmock_noise-0.5.2.tar.gz", hash = "sha256:914192371f34ff6a5d5ff3f002f9801bbbf9fda3f0782385017a73146c3060cb", size = 755927, upload-time = "2026-06-16T03:37:03.628Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3c/d1/06171b4287ec43b15184905c2313ed991aaec57551082a13bb331d49e571/gwmock_noise-0.5.2-py3-none-any.whl", hash = "sha256:43a749fa3ddd5a98049b17e14c4a1843c17acabb5ad04ffba4acd1ee212b2092", size = 528388, upload-time = "2026-06-16T03:37:04.785Z" },
 ]
-provides-extras = ["frame", "gengli", "gwosc", "gwpy"]
-
-[package.metadata.requires-dev]
-build = [{ name = "hatch", specifier = ">=1.17.0" }]
-dev = [
-    { name = "prek", specifier = ">=0.4.5" },
-    { name = "pytest", specifier = ">=9.1.0" },
-    { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "pytest-github-actions-annotate-failures", specifier = ">=0.4.1" },
-    { name = "pytest-mock", specifier = ">=3.15.1" },
-    { name = "ruff", specifier = ">=0.15.18" },
-]
-docs = [
-    { name = "mkdocstrings-python", specifier = ">=2.0.5" },
-    { name = "zensical", specifier = ">=0.0.45" },
-]
-release = [{ name = "git-cliff", specifier = ">=2.13.1" }]
 
 [[package]]
 name = "gwmock-pop"
-source = { editable = "../../software/gwmock-pop" }
+version = "0.10.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "h5py" },
     { name = "jax" },
@@ -791,34 +738,10 @@ dependencies = [
     { name = "ruyaml" },
     { name = "typer" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "h5py", specifier = ">=3.16.0" },
-    { name = "jax", specifier = ">=0.10.1" },
-    { name = "networkx", specifier = ">=3.6.1" },
-    { name = "pydantic", specifier = ">=2.13.4" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "ruyaml", specifier = ">=0.91.0" },
-    { name = "typer", specifier = ">=0.26.7" },
+sdist = { url = "https://files.pythonhosted.org/packages/29/94/fd0d6fa2844c5e14af994b4278069ccd6b8c00f2d888db96312e17b255fd/gwmock_pop-0.10.0.tar.gz", hash = "sha256:a1377788b30d1af6e2df8d24394eabbb80ddc528b470884a888bd7a70ae26964", size = 242781, upload-time = "2026-06-17T14:32:12.867Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c3/2f/fa14a2abec9d6308e6bcb73fb9b547371b697c372073544050bedf048f9d/gwmock_pop-0.10.0-py3-none-any.whl", hash = "sha256:fe7756ed9c2241269893747deea8272e094c1c83c6df80ceb5f7487059391a7c", size = 104006, upload-time = "2026-06-17T14:32:13.945Z" },
 ]
-
-[package.metadata.requires-dev]
-build = [{ name = "hatch", specifier = ">=1.17.0" }]
-dev = [
-    { name = "astropy", specifier = ">=7.2.0" },
-    { name = "hypothesis", specifier = ">=6.155.2" },
-    { name = "prek", specifier = ">=0.4.4" },
-    { name = "pytest", specifier = ">=9.0.3" },
-    { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "pytest-github-actions-annotate-failures", specifier = ">=0.4.0" },
-    { name = "pytest-mock", specifier = ">=3.15.1" },
-]
-docs = [
-    { name = "mkdocstrings-python", specifier = ">=2.0.4" },
-    { name = "zensical", specifier = ">=0.0.45" },
-]
-release = [{ name = "git-cliff", specifier = ">=2.13.1" }]
 
 [[package]]
 name = "gwmock-sgwb-workshop"
@@ -829,6 +752,7 @@ dependencies = [
     { name = "gwmock-noise" },
     { name = "gwmock-pop" },
     { name = "gwmock-signal" },
+    { name = "ipykernel" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
     { name = "nbconvert" },
@@ -844,10 +768,11 @@ release = [
 
 [package.metadata]
 requires-dist = [
-    { name = "gwmock", extras = ["sgwb"], editable = "../../software/gwmock" },
-    { name = "gwmock-noise", editable = "../../software/gwmock-noise" },
-    { name = "gwmock-pop", editable = "../../software/gwmock-pop" },
-    { name = "gwmock-signal", editable = "../../software/gwmock-signal" },
+    { name = "gwmock", extras = ["sgwb"], specifier = "==0.8.0" },
+    { name = "gwmock-noise", specifier = "==0.5.2" },
+    { name = "gwmock-pop", specifier = "==0.10.0" },
+    { name = "gwmock-signal", specifier = "==0.9.1" },
+    { name = "ipykernel", specifier = ">=7.3.0" },
     { name = "jupyterlab", specifier = ">=4" },
     { name = "matplotlib", specifier = ">=3.8" },
     { name = "nbconvert", specifier = ">=7" },
@@ -859,46 +784,23 @@ release = [{ name = "git-cliff", specifier = ">=2.13.1" }]
 
 [[package]]
 name = "gwmock-signal"
-source = { editable = "../../software/gwmock-signal" }
+version = "0.9.1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "gwpy" },
     { name = "lalsuite" },
     { name = "pyyaml" },
     { name = "typer" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/fa/72/7c68d569259f990c43cdb831c70c32440d6612ad5585469da0a59774aa55/gwmock_signal-0.9.1.tar.gz", hash = "sha256:9836312fa279bef85bec9d20167074e0961460ec55286957152226c3b1b3a865", size = 319945, upload-time = "2026-06-22T13:51:53.64Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ae/62/d587cfd1c25f9785b835b7b936afa6182032355034a0718b10e0516a6e0e/gwmock_signal-0.9.1-py3-none-any.whl", hash = "sha256:39e08b68d6c790dbcd36b0537f10cc5af7c3fbd9a964eff35f6a658447631949", size = 99303, upload-time = "2026-06-22T13:51:52.384Z" },
+]
 
 [package.optional-dependencies]
 sgwb = [
     { name = "gwmock-noise" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "gwmock-noise", marker = "extra == 'sgwb'", specifier = ">=0.5.2" },
-    { name = "gwpy", specifier = ">=4.0.1" },
-    { name = "lalsuite", specifier = ">=7.26.15" },
-    { name = "pycbc", marker = "extra == 'pycbc'", specifier = ">=2.11.0" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "ripplegw", marker = "extra == 'jax'", specifier = ">=0.2.0" },
-    { name = "typer", specifier = ">=0.26.7" },
-]
-provides-extras = ["jax", "pycbc", "sgwb"]
-
-[package.metadata.requires-dev]
-build = [{ name = "hatch", specifier = ">=1.17.0" }]
-dev = [
-    { name = "prek", specifier = ">=0.4.5" },
-    { name = "pytest", specifier = ">=9.1.1" },
-    { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "pytest-github-actions-annotate-failures", specifier = ">=0.4.1" },
-    { name = "pytest-mock", specifier = ">=3.15.1" },
-    { name = "ruff", specifier = ">=0.15.18" },
-]
-docs = [
-    { name = "mkdocstrings-python", specifier = ">=2.0.5" },
-    { name = "zensical", specifier = ">=0.0.45" },
-]
-release = [{ name = "git-cliff", specifier = ">=2.13.1" }]
 
 [[package]]
 name = "gwosc"

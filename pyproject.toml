@@ -9,14 +9,15 @@ dependencies = [
   # The workshop runtime: gwmock with the SGWB extra, plus the three companion
   # packages (declared explicitly so the local [tool.uv.sources] overrides below
   # apply to them, not just to gwmock).
-  "gwmock[sgwb]",
-  "gwmock-signal",
-  "gwmock-noise",
-  "gwmock-pop",
+  "gwmock[sgwb]==0.8.0",
+  "gwmock-signal==0.9.1",
+  "gwmock-noise==0.5.2",
+  "gwmock-pop==0.10.0",
   # Tools used by the notebooks.
   "jupyterlab>=4",
   "matplotlib>=3.8",
   "nbconvert>=7",
+  "ipykernel>=7.3.0",
 ]
 
 [dependency-groups]
@@ -27,22 +28,3 @@ release = ["git-cliff>=2.13.1"]
 # Python package — tell uv to manage the environment without trying to build it.
 [tool.uv]
 package = false
-
-# ===========================================================================
-# LOCAL DEV LINKS — TEMPORARY (remove before publishing the materials)
-# ---------------------------------------------------------------------------
-# While finalizing the workshop we verify against the in-development gwmock
-# packages on disk (they carry unreleased fixes, e.g. the `validate`
-# double-count fix). The paths are relative to this file:
-#   <projects>/presentation/<this-repo>/  ->  ../../software/<pkg>
-#
-# BEFORE RELEASE: delete this entire [tool.uv.sources] block, then
-#   uv lock && uv sync
-# so the environment resolves the released `gwmock[sgwb]` from PyPI, and
-# re-run the notebooks to verify against the published build.
-# ===========================================================================
-[tool.uv.sources]
-gwmock = { path = "../../software/gwmock", editable = true }
-gwmock-signal = { path = "../../software/gwmock-signal", editable = true }
-gwmock-noise = { path = "../../software/gwmock-noise", editable = true }
-gwmock-pop = { path = "../../software/gwmock-pop", editable = true }
