@@ -95,3 +95,10 @@ __pycache__/
 materials/notebooks/**/output/
 materials/notebooks/**/metadata/
 materials/notebooks/**/*.out.ipynb
+
+# Notebook scratch files written when running a notebook in place
+materials/notebooks/*.yaml
+materials/notebooks/*.csv
+materials/notebooks/*.gwf
+materials/notebooks/*.npy
+materials/notebooks/resource_usage_summary.json

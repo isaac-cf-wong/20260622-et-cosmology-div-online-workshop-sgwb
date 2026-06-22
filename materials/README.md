@@ -1,9 +1,8 @@
 # Workshop materials — gwmock SGWB Mock Data Challenge
 
-Hands-on notebooks for the workshop. Five short, self-contained notebooks that
-mirror the five slide sections. Everything runs on a laptop **or** in Google
-Colab in a few minutes; the example runs are deliberately small (a few seconds
-each).
+Hands-on notebooks for the workshop — one per part. Five short, self-contained
+notebooks; everything runs on a laptop **or** in Google Colab in a few minutes,
+and the example runs are deliberately small (a few seconds each).
 
 | #   | Notebook                                                                           | Section                         |
 | --- | ---------------------------------------------------------------------------------- | ------------------------------- |
@@ -50,15 +49,16 @@ jupyter lab        # then open materials/notebooks/
 ## Verified
 
 All five notebooks were executed end-to-end on a clean macOS-arm64 environment
-with the released `gwmock 0.7.3` (`gwmock-signal 0.9.0`, `gwmock-noise 0.5.2`,
+with the released `gwmock 0.8.0` (`gwmock-signal 0.9.1`, `gwmock-noise 0.5.2`,
 `gwmock-pop 0.10.0`). Key checks that pass:
 
 - reproduce-from-metadata → strain arrays **bit-identical**
 - `merge` → `data == signal + noise` exactly
 - SGWB strain PSD vs. theory → median ratio **0.92** over 8–200 Hz
 - SGWB cross-detector Pearson correlation → **0.98**
+- reproduced GWF → `validate` reports **"same data, repackaged"** (content hash)
 
-> **Note on `validate`:** the current release double-counts files in
-> `gwmock validate` output (each file shows once as `PASS`, once as
-> `File not found`). The `PASS` rows are the real result; a fix is queued. See
-> the workshop maintainer notes.
+> **`validate`** checks each output with a **content hash** (decoded data) and
+> the raw-file **byte hash**. A re-generated GWF frame validates as **"PASS
+> (same data, repackaged)"** — content matches, bytes differ because the GWF
+> container restamps its write-time. Byte mismatches still flag corruption.

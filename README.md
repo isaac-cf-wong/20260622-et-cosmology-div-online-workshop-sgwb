@@ -33,7 +33,7 @@ materials/
 Self-contained and small (each run is a few seconds). On **Colab** the first
 cell installs gwmock and all data/configs are written inline — no checkout
 needed. See [`materials/README.md`](materials/README.md). All five were executed
-end-to-end on a clean macOS-arm64 environment against released `gwmock 0.7.3`.
+end-to-end on a clean macOS-arm64 environment against released `gwmock 0.8.0`.
 
 ## Building the slides
 
