@@ -2,14 +2,14 @@
 
 Hands-on — one notebook per part, run as we go:
 
-| | Part | Notebook | ~min |
-| --- | --- | --- | --- |
-| **0** | Installation & setup — CLI tour | `00-installation-setup` | 5 |
-| **1** | Basic workflow & configs — signal + noise | `01-basic-workflow` | 8 |
-| **2** | Metadata & reproducibility | `02-metadata-reproducibility` | 6 |
-| **3** | Downstream pipeline integration | `03-downstream-integration` | 6 |
-| **4** | Advanced: the stochastic background | `04-advanced-sgwb` | 10 |
-| | Questions throughout + buffer | | 5 |
+|       | Part                                      | Notebook                      | ~min |
+| ----- | ----------------------------------------- | ----------------------------- | ---- |
+| **0** | Installation & setup — CLI tour           | `00-installation-setup`       | 5    |
+| **1** | Basic workflow & configs — signal + noise | `01-basic-workflow`           | 8    |
+| **2** | Metadata & reproducibility                | `02-metadata-reproducibility` | 6    |
+| **3** | Downstream pipeline integration           | `03-downstream-integration`   | 6    |
+| **4** | Advanced: the stochastic background       | `04-advanced-sgwb`            | 10   |
+|       | Questions throughout + buffer             |                               | 5    |
 
 <p class="takeaway">Each part stands alone — jump back into any notebook later to go deeper.</p>
 

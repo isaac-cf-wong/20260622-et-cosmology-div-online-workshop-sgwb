@@ -5,11 +5,11 @@
     <h3>A config is two blocks</h3>
 
 ```yaml
-globals:        # rate, duration, start, seed, paths
+globals: # rate, duration, start, seed, paths
 orchestration:
-  population:   # the event catalogue
-  signal:       # detectors, waveform / SGWB
-  noise:        # the noise model
+    population: # the event catalogue
+    signal: # detectors, waveform / SGWB
+    noise: # the noise model
 ```
 
   </div>
@@ -30,6 +30,7 @@ gwmock merge     …          # signal + noise
 
 Notes:
 
-- this is orientation, not a tutorial — just so the notebooks aren't a cold start
+- this is orientation, not a tutorial — just so the notebooks aren't a cold
+  start
 - any section of orchestration can be omitted: noise-only, signal-only, or both
 - don't read it out; point at the shape and move on (~40 s)

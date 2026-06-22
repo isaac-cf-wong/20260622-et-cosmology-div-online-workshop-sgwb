@@ -19,6 +19,8 @@
 
 Notes:
 
-- frame the SGWB physically before the API: it's a field, correlated between detectors
-- the equation is the model gwmock implements; we verify the generated data reproduces it (notebook 04)
+- frame the SGWB physically before the API: it's a field, correlated between
+  detectors
+- the equation is the model gwmock implements; we verify the generated data
+  reproduces it (notebook 04)
 - ~1 min

@@ -25,4 +25,5 @@ Notes:
 
 - give everyone a moment to open notebook 00 (Colab link or local)
 - Colab is the safe default for a mixed-laptop audience
-- the first cell only installs if gwmock isn't already importable, so re-running is harmless
+- the first cell only installs if gwmock isn't already importable, so re-running
+  is harmless

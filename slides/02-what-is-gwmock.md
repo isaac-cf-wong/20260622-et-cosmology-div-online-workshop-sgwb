@@ -24,6 +24,8 @@
 Notes:
 
 - one-line orientation: config in, detector strain + provenance out
-- the three companion packages are an implementation detail — users only touch the gwmock CLI
-- emphasise reproducibility + verification; that's the MDC value, not just "make some data"
+- the three companion packages are an implementation detail — users only touch
+  the gwmock CLI
+- emphasise reproducibility + verification; that's the MDC value, not just "make
+  some data"
 - ~1 min
