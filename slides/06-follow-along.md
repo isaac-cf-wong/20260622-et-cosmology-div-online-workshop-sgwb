@@ -4,7 +4,7 @@
   <div>
     <h3>Easiest — Google Colab</h3>
     <p>Nothing to install. Open a notebook, run the first cell (installs gwmock, ~2 min), and go.</p>
-    <p class="nb-tag">notebooks 00 – 04</p>
+    <p class="nb-tag"><a href="https://github.com/isaac-cf-wong/20260622-et-cosmology-div-online-workshop-sgwb/tree/main/materials/notebooks">notebooks 00 – 04</a></p>
   </div>
   <div>
     <h3>Local</h3>
