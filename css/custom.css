@@ -140,7 +140,7 @@ body {
 .takeaway {
     margin-top: 0.85em;
     border-left: 7px solid var(--gold);
-    background: linear-gradient(90deg, var(--gold-soft), rgba(255, 245, 216, 0));
+    background: linear-gradient(90deg, var(--gold-soft), rgb(255 245 216 / 0%));
     padding: 0.48em 0 0.48em 0.78em;
     color: var(--ink);
     font-weight: 700;
@@ -181,7 +181,7 @@ body {
     background: var(--cyan-soft);
     padding: 18px 20px;
     min-height: 92px;
-    box-shadow: 0 8px 20px rgba(23, 33, 43, 0.05);
+    box-shadow: 0 8px 20px rgb(23 33 43 / 5%);
     font-size: 0.94em;
 }
 
@@ -273,7 +273,7 @@ body {
     border-left: 5px solid var(--cyan);
     background: white;
     padding: 0.42em 0.68em;
-    font-family: "Courier New", monospace;
+    font-family: 'Courier New', monospace;
     font-size: 0.58em !important;
     overflow-wrap: anywhere;
 }
