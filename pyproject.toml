@@ -1,37 +1,48 @@
-[build-system]
-requires = ["hatchling", "hatch-vcs"]
-build-backend = "hatchling.build"
-
 [project]
-name = "presentation-template"
+name = "gwmock-sgwb-workshop"
+version = "0.1.0"
 authors = [{ name = "Isaac C. F. Wong" }]
-description = "A GitHub template repository for a Reveal.js presentation"
+description = "Slides and hands-on notebooks for the gwmock SGWB Mock Data Challenge workshop"
 readme = "README.md"
-classifiers = [
-  "Development Status :: 3 - Alpha",
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: BSD License",
-  "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.14",
-]
 requires-python = ">=3.12"
-dynamic = ["version"]
+dependencies = [
+  # The workshop runtime: gwmock with the SGWB extra, plus the three companion
+  # packages (declared explicitly so the local [tool.uv.sources] overrides below
+  # apply to them, not just to gwmock).
+  "gwmock[sgwb]",
+  "gwmock-signal",
+  "gwmock-noise",
+  "gwmock-pop",
+  # Tools used by the notebooks.
+  "jupyterlab>=4",
+  "matplotlib>=3.8",
+  "nbconvert>=7",
+]
 
 [dependency-groups]
 dev = ["prek>=0.4.5"]
 release = ["git-cliff>=2.13.1"]
 
-[project.urls]
-Documentation = "https://isaac-cf-wong.github.io/presentation-template"
-Source = "https://github.com/isaac-cf-wong/presentation-template"
-Tracker = "https://github.com/isaac-cf-wong/presentation-template/issues"
-Home = "https://github.com/isaac-cf-wong/presentation-template"
-"Release Notes" = "https://github.com/isaac-cf-wong/presentation-template/releases"
+# This repository is a materials bundle (slides + notebooks), not an installable
+# Python package — tell uv to manage the environment without trying to build it.
+[tool.uv]
+package = false
 
-[tool.hatch.version]
-source = "vcs"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/foo"]
+# ===========================================================================
+# LOCAL DEV LINKS — TEMPORARY (remove before publishing the materials)
+# ---------------------------------------------------------------------------
+# While finalizing the workshop we verify against the in-development gwmock
+# packages on disk (they carry unreleased fixes, e.g. the `validate`
+# double-count fix). The paths are relative to this file:
+#   <projects>/presentation/<this-repo>/  ->  ../../software/<pkg>
+#
+# BEFORE RELEASE: delete this entire [tool.uv.sources] block, then
+#   uv lock && uv sync
+# so the environment resolves the released `gwmock[sgwb]` from PyPI, and
+# re-run the notebooks to verify against the published build.
+# ===========================================================================
+[tool.uv.sources]
+gwmock = { path = "../../software/gwmock", editable = true }
+gwmock-signal = { path = "../../software/gwmock-signal", editable = true }
+gwmock-noise = { path = "../../software/gwmock-noise", editable = true }
+gwmock-pop = { path = "../../software/gwmock-pop", editable = true }
