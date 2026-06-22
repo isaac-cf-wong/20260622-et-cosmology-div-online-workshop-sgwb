@@ -4,19 +4,19 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Presentation Template</title>
+        <title>gwmock — SGWB Mock Data Challenge Workshop</title>
         <meta
             name="description"
-            content="A modern presentation built with reveal.js"
+            content="Hands-on workshop: generating stochastic gravitational-wave background mock data with gwmock"
         />
-        <meta name="author" content="Your Name" />
+        <meta name="author" content="Isaac C. F. Wong" />
 
         <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
         <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
         <!-- Theme CSS (change theme here) -->
         <link
             rel="stylesheet"
-            href="node_modules/reveal.js/dist/theme/black.css"
+            href="node_modules/reveal.js/dist/theme/white.css"
             id="theme"
         />
         <link
@@ -27,35 +27,39 @@
     </head>
 
     <body>
+        <div class="deck-brand">
+            <img src="images/kuleuven.png" alt="KU Leuven" />
+        </div>
+        <div class="deck-footer">
+            Wong | gwmock — SGWB Mock Data Challenge | ET Cosmology Division ·
+            22 June 2026
+        </div>
+
         <div class="reveal">
             <div class="slides">
                 <!--
-          Each section loads a Markdown file via reveal.js's built-in data-markdown.
-          Use data-separator-vertical to split a single .md file into vertical slides.
+          Intro deck only: basic facts + the 40-min roadmap, then we move to the
+          notebooks (materials/notebooks/) for the hands-on. One slide per file.
         -->
-                <section
-                    data-markdown="slides/01-title.md"
-                    data-background-gradient="linear-gradient(to bottom, #283048, #859398)"
-                ></section>
+                <section data-markdown="slides/01-title.md"></section>
 
-                <section data-markdown="slides/02-about.md"></section>
+                <!-- What gwmock is -->
+                <section data-markdown="slides/02-what-is-gwmock.md"></section>
 
-                <!-- Vertical group: overview → code → math, separated by --- in the .md file -->
-                <section
-                    data-markdown="slides/03-features.md"
-                    data-separator-vertical="^---$"
-                ></section>
+                <!-- The config/CLI mental model -->
+                <section data-markdown="slides/03-at-a-glance.md"></section>
 
-                <!-- Vertical group: getting started → themes, separated by --- in the .md file -->
-                <section
-                    data-markdown="slides/04-getting-started.md"
-                    data-separator-vertical="^---$"
-                ></section>
+                <!-- Today's focus: the SGWB -->
+                <section data-markdown="slides/04-today-sgwb.md"></section>
 
-                <section
-                    data-markdown="slides/05-conclusion.md"
-                    data-background-gradient="linear-gradient(to bottom, #134E5E, #71B280)"
-                ></section>
+                <!-- The 40-minute plan → notebooks -->
+                <section data-markdown="slides/05-plan.md"></section>
+
+                <!-- How to follow along (Colab / local) -->
+                <section data-markdown="slides/06-follow-along.md"></section>
+
+                <!-- Hand-off to the notebooks -->
+                <section data-markdown="slides/07-lets-go.md"></section>
             </div>
         </div>
 
@@ -75,9 +79,14 @@
                 progress: true,
                 slideNumber: 'c/t',
                 hash: true,
+                // ?print-pdf: one page per slide, not one per fragment
+                pdfSeparateFragments: false,
                 center: true,
                 touch: true,
-                transition: 'slide',
+                width: 1280,
+                height: 720,
+                margin: 0.075,
+                transition: 'fade',
                 transitionSpeed: 'default',
                 backgroundTransition: 'fade',
                 viewDistance: 3,
@@ -90,6 +99,32 @@
                     RevealSearch,
                     RevealZoom,
                 ],
+            }).then(() => {
+                // ?print-pdf fix: re-typeset KaTeX after the PDF layout
+                // completes, otherwise math on detached pages can stay raw.
+                Reveal.on('pdf-ready', function rerenderMath() {
+                    if (typeof renderMathInElement === 'function') {
+                        renderMathInElement(Reveal.getSlidesElement(), {
+                            delimiters: [
+                                { left: '$$', right: '$$', display: true },
+                                { left: '$', right: '$', display: false },
+                                { left: '\\(', right: '\\)', display: false },
+                                { left: '\\[', right: '\\]', display: true },
+                            ],
+                            ignoredTags: [
+                                'script',
+                                'noscript',
+                                'style',
+                                'textarea',
+                                'pre',
+                                'code',
+                            ],
+                        })
+                        Reveal.layout()
+                    } else {
+                        setTimeout(rerenderMath, 100)
+                    }
+                })
             })
         </script>
     </body>
