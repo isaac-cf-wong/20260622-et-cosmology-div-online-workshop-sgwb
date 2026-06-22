@@ -53,7 +53,6 @@ Export to PDF by appending `?print-pdf` to the URL and printing (landscape).
 
 - Docs: <https://leuven-gravity-institute.github.io/gwmock>
 - Source: `Leuven-Gravity-Institute/gwmock`
-- Inference companion: `sgwbjax`
 
 ## License
 
