@@ -84,3 +84,14 @@ custom-config.js
 
 # Lighthourse reports
 .lighthouseci/
+
+# Python / uv (workshop verification environment)
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Notebook run artifacts (generated when running the materials locally)
+materials/notebooks/**/output/
+materials/notebooks/**/metadata/
+materials/notebooks/**/*.out.ipynb
