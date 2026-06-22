@@ -18,8 +18,14 @@ each).
 Each notebook's **first code cell** installs gwmock
 (`%pip install "gwmock[sgwb]"`), and all data/configs are written inline with
 `%%writefile` — so the notebooks are fully self-contained and need no repo
-checkout on Colab. Open a notebook via its "Open in Colab" badge (the badge URLs
-use a `USER/REPO/BRANCH` placeholder — update them once the repo is pushed).
+checkout on Colab. Open a notebook via its **"Open in Colab" badge**, which
+points at
+`colab.research.google.com/github/isaac-cf-wong/20260622-et-cosmology-div-online-workshop-sgwb/blob/main/materials/notebooks/<notebook>.ipynb`.
+
+> The badges work once this repo is **public** on GitHub (Colab needs to read
+> the notebook from GitHub). A bare repo link does not open Colab — use the
+> badge, or paste the repo URL into Colab's **File → Open notebook → GitHub**
+> tab to browse all notebooks.
 
 ## Run locally
 

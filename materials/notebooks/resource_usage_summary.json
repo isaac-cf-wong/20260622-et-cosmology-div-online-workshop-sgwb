@@ -1,0 +1,14 @@
+{
+    "cpu_core_hours": 7.2e-5,
+    "peak_memory_gb": 0.352,
+    "average_memory_gb": 0.352,
+    "io_operations": {
+        "read_count": 2002,
+        "write_count": 320,
+        "read_bytes": 0,
+        "write_bytes": 307200
+    },
+    "wall_time_seconds": 0.233,
+    "wall_time": "0:00:00.233328",
+    "total_cpu_seconds": 0.26
+}
